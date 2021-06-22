@@ -48,8 +48,8 @@ export default function App() {
     setTerm(event.target.value);
     var Results = [];
     if (event.target.value.length > 1) {
-      data.filter(a => {
-        if (a.name.includes(event.target.value)) {
+      data.forEach(a => {
+        if (a.name.toLowerCase().includes(event.target.value.toLowerCase())) {
           Results.push(a);
           setData([...Results]);
         }
